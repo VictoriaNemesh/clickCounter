@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0; /* Убираем отступы браузера */
+
+   /* Центрируем по вертикали и горизонтали */
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  align-items: center;     /* по вертикали */
+
+  height: 100vh; /* Высота страницы — 100% высоты окна */
+  flex-direction: column; /* Расположить элементы сверху вниз */
+  background-color: #DCDCDC;
+}
+
+#count {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #333;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки одинаковой ширины */
+  grid-template-rows: auto auto;        /* 2 строки */
+  gap: 20px;
+  width: 90%;
+  max-width: 300px; /* чтобы не было слишком широким */
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+/* Первая кнопка в первой колонке и первой строке (по умолчанию) */
+#btn-increase {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Вторая кнопка во второй колонке и первой строке (по умолчанию) */
+#btn-decrease {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Кнопка Reset занимает обе колонки во второй строке */
+#btn-reset {
+  grid-column: 1 / span 2;  /* занимает 2 колонки */
+  grid-row: 2;
+}
+
+button {
+  font-size: 24px;
+  padding: 10px 0;
+  margin: 5px;
+  cursor: pointer;
+  background-color: green;
+  color: #fffffc;
+  border: none;
+  border-radius: 10px;
+  width: 100%; /* чтобы кнопка заняла всю ширину ячейки */
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: darkgreen;
+    transform: translateY(-3px);
+}
+
+button:active:not(:disabled) {
+  background-color: green;
+}
+
+button:focus {
+    outline: 3px solid #DCDCDC;
+    outline-offset: 3px;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+#btn-reset {
+  background-color: red;
+}
+
+#btn-reset:hover:not(:disabled) {
+  background-color: darkred;
+}
+
+#btn-reset:active:not(:disabled) {
+  background-color: red;
+}
+
+#btn-reset:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+#box {
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #fffffffc;
+  padding: 20px 20px;
+  width: min(90%, 304px);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#box > h1 {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+/* ===== Мобилки (до 480px) =====*/
+@media (max-width: 480px) {
+    #count {
+        font-size: 36px; /* чуть меньше цифры */
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    #box {
+        padding: 15px;
+    }
+}
+
+/* ===== Планшети (481px - 768px) =====*/
+@media (max-width: 768px) {
+    #count {
+        font-size: 42px; /* чуть меньше цифры */
+    }
+
+    button {
+        font-size: 20px;
+        padding: 9px 18px;
+    }
+
+    #box {
+        padding: 18px;
+    }
+}
+

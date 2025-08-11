@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Counter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="box" role="main">
+      <h1>Click Counter</h1>
+
+      <div id="count" role="status" aria-live="polite" aria-atomic="true">0</div>
+
+      <div class="buttons-container" role="clicker" >  
+        <button type="button" id="btn-increase" aria-label="Increase by one">+1</button>
+        <button type="button" id="btn-decrease" aria-label="Decrease by one">-1</button>
+        <button type="button" id="btn-reset" aria-label="Reset accounter">Reset</button>
+      </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
