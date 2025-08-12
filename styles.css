@@ -3,14 +3,14 @@ body {
   text-align: center;
   margin: 0; /* Убираем отступы браузера */
 
-   /* Центрируем по вертикали и горизонтали */
+  /* Центрируем по вертикали и горизонтали */
   display: flex;
   justify-content: center; /* по горизонтали */
-  align-items: center;     /* по вертикали */
+  align-items: center; /* по вертикали */
 
   height: 100vh; /* Высота страницы — 100% высоты окна */
   flex-direction: column; /* Расположить элементы сверху вниз */
-  background-color: #DCDCDC;
+  background-color: #dcdcdc;
 }
 
 #count {
@@ -22,7 +22,7 @@ body {
 .buttons-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 колонки одинаковой ширины */
-  grid-template-rows: auto auto;        /* 2 строки */
+  grid-template-rows: auto auto; /* 2 строки */
   gap: 20px;
   width: 90%;
   max-width: 300px; /* чтобы не было слишком широким */
@@ -45,7 +45,7 @@ body {
 
 /* Кнопка Reset занимает обе колонки во второй строке */
 #btn-reset {
-  grid-column: 1 / span 2;  /* занимает 2 колонки */
+  grid-column: 1 / span 2; /* занимает 2 колонки */
   grid-row: 2;
 }
 
@@ -61,11 +61,13 @@ button {
   width: 100%; /* чтобы кнопка заняла всю ширину ячейки */
   box-sizing: border-box;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none; /* убирает синий контур при фокусе */
+  -webkit-tap-highlight-color: transparent; /* убирает синий эффект при тапе на мобильных */
 }
 
 button:hover:not(:disabled) {
   background-color: darkgreen;
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 button:active:not(:disabled) {
@@ -73,16 +75,16 @@ button:active:not(:disabled) {
 }
 
 button:focus {
-    outline: 3px solid #DCDCDC;
-    outline-offset: 3px;
+  outline: 3px solid #dcdcdc;
+  outline-offset: 3px;
+  outline: none;
 }
 
 button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-    transform: none;
+  background-color: gray;
+  cursor: not-allowed;
+  transform: none;
 }
-
 
 #btn-reset {
   background-color: red;
@@ -116,33 +118,32 @@ button:disabled {
 
 /* ===== Мобилки (до 480px) =====*/
 @media (max-width: 480px) {
-    #count {
-        font-size: 36px; /* чуть меньше цифры */
-    }
+  #count {
+    font-size: 36px; /* чуть меньше цифры */
+  }
 
-    button {
-        font-size: 18px;
-        padding: 8px 16px;
-    }
+  button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
 
-    #box {
-        padding: 15px;
-    }
+  #box {
+    padding: 15px;
+  }
 }
 
 /* ===== Планшети (481px - 768px) =====*/
 @media (max-width: 768px) {
-    #count {
-        font-size: 42px; /* чуть меньше цифры */
-    }
+  #count {
+    font-size: 42px; /* чуть меньше цифры */
+  }
 
-    button {
-        font-size: 20px;
-        padding: 9px 18px;
-    }
+  button {
+    font-size: 20px;
+    padding: 9px 18px;
+  }
 
-    #box {
-        padding: 18px;
-    }
+  #box {
+    padding: 18px;
+  }
 }
-
